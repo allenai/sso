@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Skill Set Optimization: Reinforcing Language Model Behavior via Transferable Skills">
+  <meta name="keywords" content="Skill Set Optimization, Language Models, Reinforcement Learning, AI2, Aristo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSO - Allen Institute for AI</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ai2_website_top.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Skill Set Optimization: Reinforcing Language Model Behavior via Transferable Skills</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="http://www.kolbynottingham.com/">Kolby Nottingham</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+            <a href="https://www.majumderb.com/">Bodhisattwa Prasad Majumder</a><sup>2*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://bhavanadalvi.github.io/">Bhavana Dalvi Mishra</a><sup>2*</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://sameersingh.org/">Sameer Singh</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://allenai.org/team/peterc/">Peter Clark</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://royf.org/">Roy Fox</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California Irvine</span>,
+            <span class="author-block"><sup>2</sup>Allen Institute for AI</span>
+            <br>
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2402.03244.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/allenai/sso"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="./static/images/sso_example.png" style="max-width: 40%;">
+        <br>
+      <h2 class="subtitle has-text-centered">
+        Continual learning for LLM actors via discovering and reinforcing in-context skills
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Abstract</h3>
+        <div class="content has-text-justified">
+          <p>
+            Large language models (LLMs) have recently been used for sequential decision making in interactive environments. However, leveraging environment reward signals for continual LLM actor improvement is not straightforward. We propose Skill Set Optimization (SSO) for improving LLM actor performance through constructing and refining sets of transferable skills. SSO constructs skills by extracting common subtrajectories with high rewards and generating subgoals and instructions to represent each skill. These skills are provided to the LLM actor in-context to reinforce behaviors with high rewards. Then, SSO further refines the skill set by pruning skills that do not continue to result in high rewards. We evaluate our method in the classic videogame NetHack and the text environment ScienceWorld to demonstrate SSO's ability to optimize a set of skills and perform in-context policy improvement. SSO outperforms baselines by 40% in our custom NetHack task and outperforms the previous state-of-the-art in ScienceWorld by 35%.
+          </p>
+          <p>            
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+
+            <h3 class="title is-4">In-Context Policy Improvement</h3>
+            <img src="./static/images/incontext.png">
+            <br>
+            <p>
+              Like other continual learning methods<a href="#footnote-1">*</a>, SSO uses in-context "memories" with information about the task and environment to improve the LLM actor's policy. The memories that SSO generates are instructions for achieving subgoals we call skills. Unlike previous work, SSO continuously evaluates generated memories, creates memories that define modular subgoals, and facilitates memory retrieval.
+            </p>
+            <p id="footnote-1">
+              * e.g. <a href="https://voyager.minedojo.org/">Voyager</a>, <a href="https://arxiv.org/pdf/2308.10144.pdf">ExpeL</a>, and <a href="https://allenai.github.io/clin/">CLIN</a> agents 
+            </p>
+
+            <h3 class="title is-4">Skill Set Optimization</h3>
+            <img src="./static/images/sso.png">
+            <br>
+            <p>
+              Each iteration of SSO includes:
+            </p> 
+            <ol>
+              <li>Rolling out a single trajectory with the LLM actor and current skill set</li>
+              <li>Constructing new skills</li>
+              <li>Refining executed skills</li>
+            </ol>
+            <p>
+              To construct new skills, we <strong>extract</strong> potential subtrajectories, <strong>score</strong> them using discounted reward and similarity and length, <strong>sample</strong> an updated skill set using beam search, and <strong>generate</strong> subgoals and instructions for each new skill. We refine the constructed skill set by filtering skills that did not result in high rewards when used previous trajectories. Then, when providing skills in-context, we retrieve only the most relevant skills based on cosine similarity of skill initial states and the current environment state.
+            </p>
+
+            <h3 class="title is-4">Skill Lifecycle</h3>
+            <img src="./static/images/usage.png" display="block" style="max-width: 100%; align-items: center; margin: auto;">
+            <br>
+            <br>
+            <p>
+              Each row of this plot shows all of the skills created in the cooresponding iteration and when they were executed. On both ScienceWorld and NetHack, SSO prunes most new skills after few iterations. The LLM actor uses more recent skills as it continues to improve at the task and learn new skills and improve old skills.
+            </p>
+
+            <h3 class="title is-4">State-of-that-art Results</h3>
+            <img src="./static/images/scienceworld.png" display="block" style="max-width: 80%; align-items: center; margin: auto;">
+            <br>
+            <p>
+              SSO outperforms previous state-of-the-art in ScienceWorld by 35% in task adaptation and 14% in task transfer. Learned and reinforced skills such as those listed below provide knowledge of subgoals that are transferable across tasks.
+            </p>
+            <table class="skill-table", style="width: 80%; table-layout: fixed; margin:auto;">
+              <tr>
+                <td style="width:60%">
+                  <strong>You move to the kitchen</strong>
+                  <ol>
+                    <li>Go to the hallway</li>
+                    <li>Go to the kitchen</li>
+                  </ol>
+                </td>
+                <td style="width:100%">
+                  <strong>The stove is turned on. on the stove is: a substance called liquid [substance]</strong>
+                  <ol>
+                    <li>focus on the thermometer</li>
+                    <li>focus on the substance you want to heat</li>
+                    <li>move the focused substance to the stove</li>
+                    <li>activate the stove</li>
+                  </ol>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{nottingham2024sso,
+  author    = "Nottingham, Kolby and Majumder, Bodhisattwa Prasad and Dalvi Mishra, Bhavana and Singh, Sameer and Clark, Peter and Fox, Roy",
+  title     = "Skill Set Optimization: Reinforcing Language Model Behavior via Transferable Skills",
+  journal   = "arXiv",
+  year      = "2024",
+  url       = "https://arxiv.org/abs/2402.03244"
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered publication-links" style="display:grid!;">
+        <span class="link-block">
+            <img src="./static/images/uci.png" display="block" style="max-width: 20%;">
+        </span>
+        <span class="link-block">
+            <img src="./static/images/ai2-logo-header.png" display="block" style="max-width: 100%;">
+        </span>
+        <span class="link-block">
+            <img src="./static/images/aristo-logo-header.png" display="block" style="max-width: 30%;">
+        </span>
+    </div>
+    <br>
+    <p><center>
+    <!-- <p><center><a href="https://allenai.org/">Allen Institute for AI</a> - all rights reserved.<br> -->
+      Site template borrowed from <a href="https://nerfies.github.io/">here</a>.
+    </center></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
