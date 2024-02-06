@@ -1,5 +1,13 @@
 # Skill Set Optimization
 
+<a href="https://allenai.github.io/sso/">
+    <img src="https://img.shields.io/badge/Project Page-red">
+  </a>
+  <a href="https://arxiv.org/pdf/2402.03244.pdf">
+    <img src="https://img.shields.io/badge/Paper-blue">
+  </a> 
+</p>
+
 ## Installation
 
 pip install python library requirements with:
@@ -80,3 +88,14 @@ Evaluate on a ScienceWorld task and variants using:
 ```
 
 Note that `task` can be set to any valid ScienceWorld task, and variants can be selected randomly with `train_variant_count`/`test_variant_count` or by specifying specific variants with `train_variants`/`test_variants`.
+
+## Citation
+```bib
+@article{nottingham2024sso,
+  author    = "Nottingham, Kolby and Majumder, Bodhisattwa Prasad and Dalvi Mishra, Bhavana and Singh, Sameer and Clark, Peter and Fox, Roy",
+  title     = "Skill Set Optimization: Reinforcing Language Model Behavior via Transferable Skills",
+  journal   = "arXiv",
+  year      = "2024",
+  url       = "https://arxiv.org/abs/2402.03244"
+}
+```
