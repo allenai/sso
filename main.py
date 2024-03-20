@@ -9,7 +9,7 @@ from sso.env import Env
 from sso.env.scienceworld import ScienceWorld
 from sso.env.nethack.base import NetHackTask
 from sso.agent import Agent
-from sso.agent.skills import IncontextAgent
+from sso.agent.skills import SkillsAgent
 from sso.agent.fewshot import FewshotAgent
 from sso.agent.reflexion import ReflexionAgent
 from sso.memory.skillset import SkillSetMemory
@@ -224,7 +224,7 @@ if __name__ == '__main__':
         trim_states=not args.full_states
     )
     if args.agent == "skills":
-        agent = IncontextAgent(**agent_args)
+        agent = SkillsAgent(**agent_args)
     elif args.agent == "fewshot":
         agent = FewshotAgent(**agent_args)
     elif args.agent == "reflexion":

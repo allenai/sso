@@ -15,14 +15,8 @@ class FewshotAgent(Agent):
         # Get next action
         return self._act(trajectory)
 
-    def record_done(self, trajectory: Trajectory) -> None:
-        self.step_log()
-        self.log("reward", trajectory[-1].reward)
-        self.log("last_action", trajectory[-1].last_action)
-        self.log("state_description", trajectory[-1].state_description)
-
-        if not self.freeze_memory:
-            self.memory.insert(trajectory)
+    def _update_memory(self, trajectory: Trajectory) -> None:
+        self.memory.insert(trajectory)
 
     def _act(self, trajectory: Trajectory) -> str:
         sub_trajectory = trajectory.slice(-self.max_history, None)
@@ -35,7 +29,7 @@ class FewshotAgent(Agent):
             system_message += "\n\n" + sub_trajectory[-1].action_prompt
 
         if len(self.memory.trajectories) > 0:
-            examples = self.memory.trajectories[-self.fewshot:]
+            examples = self.memory.get_memories(n=self.fewshot)
             system_message += "\n\nUse the following example trajector{} to help you accomplish the task:".format(
                 "ies" if len(examples) > 1 else "y"
             )

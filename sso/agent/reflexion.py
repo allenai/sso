@@ -28,19 +28,13 @@ class ReflexionAgent(Agent):
         with open(os.path.join(load_dir, "reflections.json"), "r") as f:
             self.reflections = json.load(f)
 
-    def record_done(self, trajectory: Trajectory) -> None:
-        self.step_log()
-        self.log("reward", trajectory[-1].reward)
-        self.log("last_action", trajectory[-1].last_action)
-        self.log("state_description", trajectory[-1].state_description)
-
-        if not self.freeze_memory:
-            if sum(x.reward for x in trajectory) < 1:
-                messages = self._build_messages(trajectory)
-                messages[-1]["content"] += "\n\nThe task was not completed successfully. What should you do better next time? Be very concise. Respond with a single sentence."
-                response = query_llm(messages)
-                self.log("reflection", response)
-                self.reflections.append(response)
+    def _update_memory(self, trajectory: Trajectory) -> None:
+        if sum(x.reward for x in trajectory) < 1:
+            messages = self._build_messages(trajectory)
+            messages[-1]["content"] += "\n\nThe task was not completed successfully. What should you do better next time? Be very concise. Respond with a single sentence."
+            response = query_llm(messages)
+            self.log("reflection", response)
+            self.reflections.append(response)
 
     def _build_messages(self, trajectory: Trajectory) -> List[dict]:
         system_message = "You are playing a text-based game in which you must interact with your surroundings to complete a task.\n\n"

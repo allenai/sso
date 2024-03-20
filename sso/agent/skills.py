@@ -1,24 +1,17 @@
-from typing import List
-
 from sso.trajectory import Trajectory
-from sso.skill import Skill
 from sso.llm import query_llm
 from sso.agent import Agent
 from sso.utils import clean_feature
 
 
-class IncontextAgent(Agent):
+class SkillsAgent(Agent):
 
     def act(self, trajectory: Trajectory) -> str:
         super().act(trajectory)
         return self._act(trajectory)
 
-    def _get_skill_text(self, skills: List[Skill]) -> str:
-        res = "The following instructions contain potentially useful information about reaching subgoals:"
-        for skill in skills:
-            res += "\n\nInstructions for reaching the subgoal \"{}\":\n\t".format(skill.target)
-            res += "\n\t".join("{}. {}".format(i + 1, instruction) for i, instruction in enumerate(skill.instructions))
-        return res
+    def _update_memory(self, trajectory: Trajectory) -> None:
+        self.memory.build(trajectory)
 
     def _act(self, trajectory: Trajectory) -> str:
         sub_trajectory = trajectory.slice(-self.max_history, None)
@@ -30,9 +23,13 @@ class IncontextAgent(Agent):
         if sub_trajectory[-1].action_prompt is not None:
             system_message += "\n\n" + sub_trajectory[-1].action_prompt
 
-        skills = self.memory.get_similar_skills(sub_trajectory)
+        skills = self.memory.get_memories(trajectory=sub_trajectory)
         if len(skills) > 0:
-            system_message += "\n\n" + self._get_skill_text(skills)
+            skill_text = "The following instructions contain potentially useful information about reaching subgoals:"
+            for skill in skills:
+                skill_text += "\n\nInstructions for reaching the subgoal \"{}\":\n\t".format(skill.target)
+                skill_text += "\n\t".join("{}. {}".format(i + 1, instruction) for i, instruction in enumerate(skill.instructions))
+            system_message += "\n\n" + skill_text
 
         messages = [dict(role="system", content=system_message)]
 

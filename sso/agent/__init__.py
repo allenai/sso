@@ -28,15 +28,17 @@ class Agent:
 
         # Get next action
         return None
+    
+    def _update_memory(self, trajectory: Trajectory) -> None:
+        raise NotImplementedError
 
     def record_done(self, trajectory: Trajectory) -> None:
         self.step_log()
         self.log("reward", trajectory[-1].reward)
         self.log("last_action", trajectory[-1].last_action)
         self.log("state_description", trajectory[-1].state_description)
-
         if not self.freeze_memory:
-            self.memory.build(trajectory)
+            self._update_memory(trajectory)
 
     def save(self, save_dir: str) -> None:
         self.memory.save(save_dir)

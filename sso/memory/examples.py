@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List
 
 from sso.trajectory import Trajectory
 from sso.memory import Memory
@@ -20,6 +20,8 @@ class ExamplesMemory(Memory):
                 if sum(x.reward for x in traj if x.reward is not None) == self.best_reward:
                     best_trajectories.append(traj)
             self.trajectories = best_trajectories
-
-    def build(self, trajectories: Union[Trajectory, List[Trajectory]] = []):
-        super().build(trajectories)
+    
+    def get_memories(self, trajectory: Trajectory = None, n: int = None) -> List[Trajectory]:
+        if n is None:
+            n = len(self.trajectories)
+        return self.trajectories[-n:]

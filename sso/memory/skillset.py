@@ -1,12 +1,15 @@
-from typing import List, Union
+from typing import List, Union, Tuple
 
 import numpy as np
 from tqdm import tqdm
 from copy import deepcopy
+from functools import lru_cache
 
 from sso.trajectory import Trajectory
 from sso.skill import Skill
 from sso.memory import Memory
+from sso.llm import query_llm
+from sso.utils import get_state_similarity
 
 
 class SkillSetMemory(Memory):
@@ -134,6 +137,29 @@ class SkillSetMemory(Memory):
         self.last_skills = [skill for skill in self.last_skills if skill in sampled_skills]
         self.last_skills = sorted(self.last_skills, key=lambda x: sampled_skills[x], reverse=True)[:self.max_skills]
 
+    def get_memories(self, trajectory: Trajectory, n: int = None) -> List[Skill]:
+        retrieved_skills = []
+
+        unused = self.memory.copy()
+        for state in trajectory:
+            for skill in unused:
+                if state.skill_target is not None and state.skill_target == skill.target:
+                    retrieved_skills.append(skill)
+                    unused.remove(skill)
+                    break
+
+        unused = sorted(
+            unused,
+            key=lambda x: np.mean([
+                get_state_similarity(subtraj[0], trajectory[-1], init_state=True)
+                for subtraj in x.trajectories
+            ])
+        )
+
+        retrieved_skills += unused[-self.max_retrieval:]
+
+        return list(set(retrieved_skills))
+
     def build(self, trajectories: Union[Trajectory, List[Trajectory]] = [], resample: bool = False) -> None:
         super().build(trajectories)
 
@@ -147,6 +173,35 @@ class SkillSetMemory(Memory):
             skill.build()
             if not self.check_similar_skills(skill):
                 self.memory.append(skill)
+
+    def log_sampled(self, step: int, skill: Skill) -> None:
+        if not any(skill == x for _, x in self.sampled):
+            self.sampled.append((step, skill))
+
+    @staticmethod
+    @lru_cache(maxsize=1000)
+    def _check_similar_skills(memory: Tuple[Skill], skill: Skill) -> bool:
+        if len(memory) == 0:
+            return False
+        system_message = "You are an expert planning system capable of completing various tasks in this environment. The environment provides observations in response to your actions. You have a library of skills that you reference to execute actions. A skill is composed of a list of instructions, a list of prerequisites, and a target state."
+
+        prompt = "Given the below list of existing skills and the new skill, determine which existing skills are semantically equivalent to the new skill. Output a comma delimited list of numbers that correspond to the existing skills. If no skills are equivalent output 'None'. Use the following format for your response:"
+        prompt += "\nThe existing skills permit the agent to... The new skill will permit the agent to...\nEquivalent skills: 1, 2, 3"
+        prompt += "\n\nExisting Skills:"
+        for i, existing_skill in enumerate(memory):
+            prompt += "\nSkill {} prerequisites: {}".format(i + 1, ", ".join(existing_skill.prereqs))
+            prompt += "\nSkill {} target: {}".format(i + 1, existing_skill.target)
+            prompt += "\nSkill {} instructions: {}".format(i + 1, ", ".join(existing_skill.instructions))
+        prompt += "\n\nNew skill prerequisites: {}".format(", ".join(skill.prereqs))
+        prompt += "\nNew skill target: {}".format(skill.target)
+        prompt += "\nNew skill instructions: {}".format(", ".join(skill.instructions))
+
+        messages = [dict(role="system", content=system_message), dict(role="user", content=prompt)]
+        response = query_llm(messages, temperature=0).lower()
+        return "none" not in response.split("skills:")[-1].split("skill:")[-1]
+
+    def check_similar_skills(self, skill: Skill) -> bool:
+        return SkillSetMemory._check_similar_skills(tuple(self.memory), skill)
 
     def _norm_score(self, score: float, mean: float, std: float) -> float:
         return max(0, (score - mean + 2 * std) / std)
