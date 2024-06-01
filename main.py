@@ -77,13 +77,14 @@ def run_experiment(
     results_dir: str,
     experiment_name: str,
     iteration: int,
+    task_id: str = None,
     temp: float = 1,
     train: bool = True,
     use_test_tasks: bool = False
 ):
     agent.train(train)
     set_default_model(temp=temp)
-    task_id, trajectory, success, score = run_episode(env, agent, test=use_test_tasks)
+    task_id, trajectory, success, score = run_episode(env, agent, task_id=task_id, test=use_test_tasks)
     save_path = os.path.join(results_dir, experiment_name, str(iteration))
     log_results(agent, trajectory, save_path, iteration, task_id, success, score)
     return score, success
@@ -129,7 +130,7 @@ def run(
             agent.clear()
             for train_iter in range(adapt_count):
                 score, _ = run_experiment(env, agent, results_dir, "test_adapt/{}/{}".format(test_id, train_iter),
-                                          "train", temp=test_temp, train=True, use_test_tasks=True)
+                                          "train", task_id=test_id, temp=test_temp, train=True, use_test_tasks=True)
                 results["adapt_" + test_id].append(score)
         results["adapt_best"] = np.mean([np.max(results["adapt_" + test_id]) for test_id in env.test_ids])
         with open(os.path.join(results_dir, "results.json"), "w") as f:
