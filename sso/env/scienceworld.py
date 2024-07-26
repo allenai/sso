@@ -38,6 +38,7 @@ class ScienceWorld(Env):
         ):
         self.env = ScienceWorldEnv()
         random.seed(seed)
+
         assert task is not None, "You must specify a task to load"
         self.env.load(task)
 
@@ -48,7 +49,7 @@ class ScienceWorld(Env):
                 if test_variants is None or x not in test_variants
             ]
             self.train_variants = random.sample(self.train_variants, min(len(self.train_variants), train_variant_count))            
-
+        
         self.test_variants = test_variants
         if self.test_variants is None:
             self.test_variants = [
@@ -95,12 +96,17 @@ class ScienceWorld(Env):
         info["task_id"] = "{}_{}".format(self.task, self.variant)
         info["task_description"] = info["taskDesc"]
         info["success"] = False
+        
         state = self.get_state(info, None, None, 0, False)
-        return state, info
+        
+        valid_action = self.env.getValidActionObjectCombinations()
+
+        return state, info, valid_action
 
     def step(self, action: str, **kwargs) -> Tuple[State, float, bool, Dict[str, Any]]:
         parsed_action = self.parse_action(action)
         self.last_obs, reward, done, info = self.env.step(parsed_action, **kwargs)
+        
         if "focus" in self.last_obs.lower():
             self.last_focus = self.last_obs
         self.last_actions.append(parsed_action)

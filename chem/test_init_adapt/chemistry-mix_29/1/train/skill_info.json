@@ -1,0 +1,245 @@
+[
+    {
+        "instructions": [
+            "activate sink",
+            "move glass cup to sink"
+        ],
+        "target": "in the sink is: a glass cup (containing a substance called water).",
+        "prereqs": [],
+        "state_similarity": 0.9860904024705194,
+        "action_similarity": 1,
+        "rewards": [
+            0.08,
+            0.0
+        ],
+        "initial": [
+            [
+                "a sink, which is turned off. in the sink is: nothing"
+            ],
+            [
+                "a sink, which is turned off. in the sink is: nothing"
+            ]
+        ],
+        "actions": [
+            [
+                "activate sink",
+                "move glass cup to sink"
+            ],
+            [
+                "activate sink",
+                "move glass cup to sink"
+            ]
+        ],
+        "final": [
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called water)",
+                "a glass cup (containing a substance called water)"
+            ],
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called water)",
+                "a glass cup (containing a substance called water)"
+            ]
+        ],
+        "traj_indices": [
+            3,
+            0
+        ],
+        "start_indices": [
+            11,
+            12
+        ],
+        "end_indices": [
+            14,
+            15
+        ]
+    },
+    {
+        "instructions": [
+            "move sugar to a container that also contains water.",
+            "mix the container.",
+            "focus on the resulting sugar water."
+        ],
+        "target": "you focus on the sugar water.",
+        "prereqs": [],
+        "state_similarity": 0.992404132570611,
+        "action_similarity": 0.9291501597371747,
+        "rewards": [
+            0.6699999999999999,
+            0.6699999999999999
+        ],
+        "initial": [
+            [
+                "a metal pot (containing a substance called sugar, a substance called water) in your inventory"
+            ],
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called sugar, a substance called water)",
+                "a glass cup (containing a substance called sugar, a substance called water)"
+            ]
+        ],
+        "actions": [
+            [
+                "mix metal pot",
+                "focus on sugar water"
+            ],
+            [
+                "mix glass cup",
+                "focus on sugar water"
+            ]
+        ],
+        "final": [
+            [
+                "You focus on the sugar water.",
+                "a metal pot (containing a substance called sugar water) in your inventory",
+                "a substance called sugar water in your inventory"
+            ],
+            [
+                "You focus on the sugar water.",
+                "a recipe titled instructions to make sugar water",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called sugar water, a substance called water)",
+                "a substance called sugar water",
+                "a substance called water",
+                "a glass cup (containing a substance called sugar water, a substance called water)"
+            ]
+        ],
+        "traj_indices": [
+            3,
+            0
+        ],
+        "start_indices": [
+            20,
+            16
+        ],
+        "end_indices": [
+            23,
+            19
+        ]
+    },
+    {
+        "instructions": [
+            "identify the current room and the target room.",
+            "if the current room is not the hallway, go to the hallway.",
+            "from the hallway, go to the target room."
+        ],
+        "target": "you move to the [target room].",
+        "prereqs": [],
+        "state_similarity": 0.9506919653961923,
+        "action_similarity": 0.9100373244618197,
+        "rewards": [
+            0.09,
+            0.16999999999999998
+        ],
+        "initial": [
+            [
+                "a door to the hallway (that is open)"
+            ],
+            [
+                "a door to the hallway (that is open)"
+            ]
+        ],
+        "actions": [
+            [
+                "go hallway",
+                "go to workshop"
+            ],
+            [
+                "go hallway",
+                "go kitchen"
+            ]
+        ],
+        "final": [
+            [
+                "this room is called the workshop."
+            ],
+            [
+                "this room is called the kitchen."
+            ]
+        ],
+        "traj_indices": [
+            3,
+            2
+        ],
+        "start_indices": [
+            4,
+            0
+        ],
+        "end_indices": [
+            7,
+            3
+        ]
+    },
+    {
+        "instructions": [
+            "look in the metal pot.",
+            "pick up the metal pot.",
+            "depending on the task, either: a. pour a substance from your inventory into the metal pot, or b. move the metal pot to a specific location (such as the sink)."
+        ],
+        "target": "the metal pot's location or content has changed.",
+        "prereqs": [],
+        "state_similarity": 0.9714525018810577,
+        "action_similarity": 0.8835503852295732,
+        "rewards": [
+            0.0,
+            0.0
+        ],
+        "initial": [
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a metal pot (containing nothing)"
+            ],
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a metal pot (containing nothing)"
+            ]
+        ],
+        "actions": [
+            [
+                "pick up metal pot",
+                "pour water in metal pot"
+            ],
+            [
+                "look in metal pot",
+                "move metal pot to sink"
+            ]
+        ],
+        "final": [
+            [
+                "a metal pot (containing a substance called water) in your inventory",
+                "a substance called water in your inventory"
+            ],
+            [
+                "a sink, which is turned off. in the sink is: a metal pot (containing nothing)",
+                "a metal pot (containing nothing)"
+            ]
+        ],
+        "traj_indices": [
+            3,
+            1
+        ],
+        "start_indices": [
+            16,
+            1
+        ],
+        "end_indices": [
+            19,
+            4
+        ]
+    }
+]

@@ -1,7 +1,7 @@
 from typing import List, Dict
 
-from sso.llm.gpt import get_response as get_response_gpt, get_embedding as get_embedding_gpt
-
+# from sso.llm.gpt import get_response as get_response_gpt, get_embedding as get_embedding_gpt
+from sso.llm.llama import get_response as get_response_llama3, get_embedding as get_embedding_llama3
 
 global DEFAULT_MODEL
 DEFAULT_MODEL = None
@@ -27,21 +27,24 @@ def set_default_model(model: str = None, temp: float = None, embedding: str = No
         DEFAULT_EMBEDDING = embedding
 
 
-def query_llm(messages: List[Dict[str, str]], model: str = None, temperature: float = 1, **generation_kwargs) -> str:
+def query_llm(messages: List[Dict[str, str]], valid_action, model: str = None, temperature: float = 1, **generation_kwargs) -> str:
     if model is None:
         global DEFAULT_MODEL
         model = DEFAULT_MODEL
     if temperature is None:
         global DEFAULT_TEMP
         temperature = DEFAULT_TEMP
-    if model.startswith("gpt"):
-        return get_response_gpt(model, messages, temperature=temperature, **generation_kwargs)
-
+    # if model.startswith("gpt"):
+        # return get_response_gpt(model, messages, temperature=temperature, **generation_kwargs)
+    if model.startswith("meta-llama"):
+        return get_response_llama3(model, messages, valid_action, temperature=temperature, **generation_kwargs)
 
 def get_embedding(content: str, model: str = None) -> List[float]:
     if model is None:
         global DEFAULT_EMBEDDING
         model = DEFAULT_EMBEDDING
 
-    if model.startswith("text"):
-        return get_embedding_gpt(model, content)
+    # if model.startswith("text"):
+        # return get_embedding_gpt(model, content)
+    if model.startswith("meta-llama"):
+        return get_embedding_llama3(model, content)

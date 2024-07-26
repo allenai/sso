@@ -1,0 +1,461 @@
+[
+    {
+        "instructions": [
+            "activate sink",
+            "move glass cup to sink"
+        ],
+        "target": "in the sink is: a glass cup (containing a substance called water).",
+        "prereqs": [],
+        "state_similarity": 0.9860904024705194,
+        "action_similarity": 1,
+        "rewards": [
+            0.08,
+            0.0
+        ],
+        "initial": [
+            [
+                "a sink, which is turned off. in the sink is: nothing"
+            ],
+            [
+                "a sink, which is turned off. in the sink is: nothing"
+            ]
+        ],
+        "actions": [
+            [
+                "activate sink",
+                "move glass cup to sink"
+            ],
+            [
+                "activate sink",
+                "move glass cup to sink"
+            ]
+        ],
+        "final": [
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called water)",
+                "a glass cup (containing a substance called water)"
+            ],
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called water)",
+                "a glass cup (containing a substance called water)"
+            ]
+        ],
+        "traj_indices": [
+            3,
+            0
+        ],
+        "start_indices": [
+            11,
+            12
+        ],
+        "end_indices": [
+            14,
+            15
+        ]
+    },
+    {
+        "instructions": [
+            "read the ambiguous request and identify the different options available for the action.",
+            "choose the desired option based on the specific object's location or status.",
+            "perform the action on the selected object using the appropriate action template (open obj, move obj to container, look in obj, etc.).",
+            "confirm the action was successful by observing the change in the environment state.",
+            "if more actions are required, repeat steps 1-4 until the task is completed."
+        ],
+        "target": "the desired action has been completed on the correctly chosen object.",
+        "prereqs": [],
+        "state_similarity": 0.9541088513873968,
+        "action_similarity": 0.891746620667655,
+        "rewards": [
+            0.0,
+            0.0
+        ],
+        "initial": [
+            [],
+            []
+        ],
+        "actions": [
+            [
+                "0",
+                "look in drawer"
+            ],
+            [
+                "0",
+                "move potato to counter"
+            ]
+        ],
+        "final": [
+            [
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer",
+                "a drawer",
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a drawer"
+            ],
+            [
+                "a counter. on the counter is: a red apple, a banana, a drawer, an orange, a potato",
+                "a potato"
+            ]
+        ],
+        "traj_indices": [
+            2,
+            1
+        ],
+        "start_indices": [
+            7,
+            24
+        ],
+        "end_indices": [
+            10,
+            27
+        ]
+    },
+    {
+        "instructions": [
+            "move sugar to a container that also contains water.",
+            "mix the container.",
+            "focus on the resulting sugar water."
+        ],
+        "target": "you focus on the sugar water.",
+        "prereqs": [],
+        "state_similarity": 0.992404132570611,
+        "action_similarity": 0.9291501597371747,
+        "rewards": [
+            0.6699999999999999,
+            0.6699999999999999
+        ],
+        "initial": [
+            [
+                "a metal pot (containing a substance called sugar, a substance called water) in your inventory"
+            ],
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called sugar, a substance called water)",
+                "a glass cup (containing a substance called sugar, a substance called water)"
+            ]
+        ],
+        "actions": [
+            [
+                "mix metal pot",
+                "focus on sugar water"
+            ],
+            [
+                "mix glass cup",
+                "focus on sugar water"
+            ]
+        ],
+        "final": [
+            [
+                "You focus on the sugar water.",
+                "a metal pot (containing a substance called sugar water) in your inventory",
+                "a substance called sugar water in your inventory"
+            ],
+            [
+                "You focus on the sugar water.",
+                "a recipe titled instructions to make sugar water",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called sugar water, a substance called water)",
+                "a substance called sugar water",
+                "a substance called water",
+                "a glass cup (containing a substance called sugar water, a substance called water)"
+            ]
+        ],
+        "traj_indices": [
+            3,
+            0
+        ],
+        "start_indices": [
+            20,
+            16
+        ],
+        "end_indices": [
+            23,
+            19
+        ]
+    },
+    {
+        "instructions": [
+            "open fridge",
+            "open cupboard"
+        ],
+        "target": "the cupboard door is open.",
+        "prereqs": [],
+        "state_similarity": 0.9773725731459756,
+        "action_similarity": 1,
+        "rewards": [
+            0.14,
+            0.08
+        ],
+        "initial": [
+            [
+                "a fridge. the fridge door is closed",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ],
+            [
+                "a fridge. the fridge door is closed",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ]
+        ],
+        "actions": [
+            [
+                "open fridge",
+                "open cupboard"
+            ],
+            [
+                "open fridge",
+                "open cupboard"
+            ]
+        ],
+        "final": [
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ],
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ]
+        ],
+        "traj_indices": [
+            4,
+            3
+        ],
+        "start_indices": [
+            1,
+            2
+        ],
+        "end_indices": [
+            4,
+            5
+        ]
+    },
+    {
+        "instructions": [
+            "locate the recipe titled \"instructions to make peanut butter with banana sandwich\".",
+            "read the recipe titled \"instructions to make peanut butter with banana sandwich\"."
+        ],
+        "target": "the recipe reads:\nto make peanut butter with banana sandwich, you need to mix peanut, banana, bread.",
+        "prereqs": [],
+        "state_similarity": 0.9481206232166816,
+        "action_similarity": 0.9042916079568735,
+        "rewards": [
+            0.22,
+            0.36000000000000004
+        ],
+        "initial": [
+            [
+                "bread"
+            ],
+            [
+                "a door to the kitchen (that is open)"
+            ]
+        ],
+        "actions": [
+            [
+                "pick up bread",
+                "read instructions to make peanut butter with banana sandwich"
+            ],
+            [
+                "go kitchen",
+                "read instructions to make peanut butter with banana sandwich"
+            ]
+        ],
+        "final": [
+            [
+                "a banana",
+                "peanut",
+                "a recipe titled instructions to make peanut butter with banana sandwich",
+                "a banana in your inventory"
+            ],
+            [
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer",
+                "a banana",
+                "a bowl (containing a red apple, a banana, an orange, a potato)",
+                "peanut",
+                "a recipe titled instructions to make peanut butter with banana sandwich"
+            ]
+        ],
+        "traj_indices": [
+            4,
+            1
+        ],
+        "start_indices": [
+            6,
+            1
+        ],
+        "end_indices": [
+            9,
+            4
+        ]
+    },
+    {
+        "instructions": [
+            "pick up the desired object from the inventory.",
+            "move the picked object to the counter."
+        ],
+        "target": "the items from the inventory are now on the counter.",
+        "prereqs": [],
+        "state_similarity": 0.9424835819665202,
+        "action_similarity": 0.8457114589689732,
+        "rewards": [
+            0.0,
+            0.0
+        ],
+        "initial": [
+            [
+                "a counter. on the counter is: a red apple, a banana, a drawer",
+                "a bowl (containing an orange, a potato) in your inventory",
+                "an orange in your inventory",
+                "an orange in your inventory"
+            ],
+            [
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer",
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a glass cup (containing a substance called water) in your inventory"
+            ]
+        ],
+        "actions": [
+            [
+                "move orange to counter",
+                "1",
+                "move potato to counter"
+            ],
+            [
+                "move glass cup to counter",
+                "pour sugar in glass cup",
+                "move sugar to counter"
+            ]
+        ],
+        "final": [
+            [
+                "a counter. on the counter is: a red apple, a banana, a drawer, an orange, a potato",
+                "a potato"
+            ],
+            [
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer, a glass cup (containing a substance called water), a substance called sugar",
+                "a substance called sugar"
+            ]
+        ],
+        "traj_indices": [
+            1,
+            0
+        ],
+        "start_indices": [
+            7,
+            40
+        ],
+        "end_indices": [
+            11,
+            44
+        ]
+    },
+    {
+        "instructions": [
+            "focus on drawer (in counter, in kitchen)",
+            "open drawer (in counter, in kitchen)"
+        ],
+        "target": "the drawer in the kitchen counter is open.",
+        "prereqs": [],
+        "state_similarity": 0.9806272680687131,
+        "action_similarity": 1,
+        "rewards": [
+            0.0,
+            0.0
+        ],
+        "initial": [
+            [
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer",
+                "a drawer",
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a drawer",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ],
+            [
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer",
+                "a drawer",
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a tin cup (containing nothing)",
+                "a drawer",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ]
+        ],
+        "actions": [
+            [
+                "open drawer",
+                "open drawer (in counter, in kitchen)"
+            ],
+            [
+                "open drawer",
+                "open drawer (in counter, in kitchen)"
+            ]
+        ],
+        "final": [
+            [
+                "this room is called the kitchen.",
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer",
+                "a drawer",
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a drawer",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ],
+            [
+                "this room is called the kitchen.",
+                "a counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer",
+                "a drawer",
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a tin cup (containing nothing)",
+                "a drawer",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ]
+        ],
+        "traj_indices": [
+            2,
+            0
+        ],
+        "start_indices": [
+            3,
+            2
+        ],
+        "end_indices": [
+            6,
+            5
+        ]
+    }
+]

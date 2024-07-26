@@ -99,3 +99,16 @@ Note that `task` can be set to any valid ScienceWorld task, and variants can be 
   url       = "https://arxiv.org/abs/2402.03244"
 }
 ```
+
+## set up the llama3 agent
+
+HF_TOKEN=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 python main.py \
+    --output results_chem_test_llama3_2 \
+    --env scienceworld \
+    --agent fewshot \
+    --memory return \
+    --model meta-llama/Meta-Llama-3-8B \
+    --task chemistry-mix \
+    --train_iters 0 \
+    --test_variants 24 29 30 27 28 26 25 31 \
+    --test_iters 8 

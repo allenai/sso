@@ -36,6 +36,12 @@ class MemoryBasedonRewards(Memory):
         self.std_similarity = 0
 
         self.state_visits = dict()
+
+
+        # load an expert trajectory into the memory
+
+
+        # templates the 
         
     
     def save(self, save_path: str) -> None:
@@ -64,7 +70,7 @@ class MemoryBasedonRewards(Memory):
 
                     trajectory = Trajectory.from_dict(data)
                     self.build(trajectory)
-    
+        # append the whole trajectory 
         
 
     def get_discounted_rewards(self, trajectory: Trajectory) -> List[float]:
@@ -176,8 +182,7 @@ class MemoryBasedonRewards(Memory):
             item[2] = self.norm_score(item[2], self.mean_similarity, self.std_similarity) * self.similarity_weight
             item[3] = item[3] * self.state_count_weight
             
-            # print(f"state {i}, return score:{item[0]}, recency score:{item[1]}, similarity score:{item[2]}\n")
-
+           
         sorted_combined_list = sorted(combined_list, 
                                       key = lambda x:x[2]+x[0]+x[1]+x[3],
                                       reverse=True) # desc

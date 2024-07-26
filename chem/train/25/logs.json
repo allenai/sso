@@ -1,0 +1,895 @@
+[
+    {
+        "task_id": "chemistry-mix_0",
+        "task_description": "Task Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water."
+    },
+    {
+        "reward": 0,
+        "last_action": null,
+        "state_description": "This room is called the hallway. In it, you see: \n\tthe agent\n\ta substance called air\n\ta picture\nYou also see:\n\tA door to the art studio (that is open)\n\tA door to the bedroom (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\tA door to the living room (that is open)\n\tA door to the workshop (that is open)\nIn your inventory, you see:\n\tan orange\n",
+        "chosen_skill": "the agent has read a recipe in the kitchen.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"the agent has either read a food recipe or picked up a necessary ingredient in the workshop.\":\n\t1. go to workshop\n\t2. if an ingredient required for a recipe is present in the workshop, pick up obj where obj is the required ingredient.\n\t3. if a recipe is present in the workshop, read obj where obj is the recipe.\n\nInstructions for reaching the subgoal \"the recipe reads: to make obj, you need to mix ingredients.\":\n\t1. go workshop\n\t2. read instructions"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            }
+        ],
+        "action_generation": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action: go kitchen"
+    },
+    {
+        "reward": 0.17,
+        "last_action": "go kitchen",
+        "state_description": "You move to the kitchen.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\tan orange\n",
+        "chosen_skill": "the agent has read a recipe in the kitchen.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"the cupboard door is open.\":\n\t1. open the cupboard.\n\t2. if an object needs to be moved to the pot, move the specified object to the pot.\n\t3. if the pot needs to be moved to the inventory, pick up the pot.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            }
+        ],
+        "action_generation": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action: read instructions to make salt water"
+    },
+    {
+        "reward": 0.08,
+        "last_action": "read instructions to make salt water",
+        "state_description": "The recipe reads:\nTo make salt water, you need to mix sodium chloride, water.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: a glass cup (containing nothing).\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\tan orange\n",
+        "chosen_skill": "a glass cup (containing a substance called water) is in the inventory.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"in the sink is: a glass cup (containing a substance called water).\":\n\t1. pick up glass cup.\n\t2. move glass cup to sink.\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            }
+        ],
+        "action_generation": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action: pick up the glass cup."
+    },
+    {
+        "reward": 0.0,
+        "last_action": "pick up glass cup",
+        "state_description": "You move the glass cup to the inventory.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing nothing)\n\tan orange\n",
+        "chosen_skill": "a glass cup (containing a substance called water) is in the inventory.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called sugar water)\":\n\t1. mix glass cup\n\t2. focus on sugar water\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            }
+        ],
+        "action_generation": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action: move glass cup to sink"
+    },
+    {
+        "reward": 0.0,
+        "last_action": "move glass cup to sink",
+        "state_description": "You move the glass cup to the sink.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: a glass cup (containing nothing).\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\tan orange\n",
+        "chosen_skill": "a glass cup (containing a substance called water) is in the inventory.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called sugar water)\":\n\t1. mix glass cup\n\t2. focus on sugar water\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            }
+        ],
+        "action_generation": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+    },
+    {
+        "reward": 0.08,
+        "last_action": "activate sink",
+        "state_description": "The sink is now activated.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned on. In the sink is: a glass cup (containing a substance called water).\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\tan orange\n",
+        "chosen_skill": "a glass cup (containing a substance called water) is in the inventory.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory.\n\nInstructions for reaching the subgoal \"in the sink is: a glass cup (containing a substance called water).\":\n\t1. pick up glass cup.\n\t2. move glass cup to sink."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            }
+        ],
+        "action_generation": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action: deactivate sink"
+    },
+    {
+        "reward": 0.0,
+        "last_action": "deactivate sink",
+        "state_description": "The sink is now deactivated.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: a glass cup (containing a substance called water).\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\tan orange\n",
+        "chosen_skill": "a glass cup (containing a substance called water) is in the inventory.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory.\n\nInstructions for reaching the subgoal \"in the sink is: a glass cup (containing a substance called water).\":\n\t1. pick up glass cup.\n\t2. move glass cup to sink."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            }
+        ],
+        "action_generation": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+    },
+    {
+        "reward": 0.0,
+        "last_action": "pick up glass cup from the sink and move it to the inventory",
+        "state_description": "No known action matches that input.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: a glass cup (containing a substance called water).\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\tan orange\n",
+        "chosen_skill": "a glass cup (containing a substance called water) is in the inventory.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"the cupboard door is open.\":\n\t1. open the cupboard.\n\t2. if an object needs to be moved to the pot, move the specified object to the pot.\n\t3. if the pot needs to be moved to the inventory, pick up the pot.\n\nInstructions for reaching the subgoal \"inside the cupboard's drawer is: nothing.\":\n\t1. open drawer (choose the option corresponding to the cupboard if asked to specify)\n\t2. look in drawer (again choose the option corresponding to the cupboard if asked to specify)"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #8:\nNo known action matches that input."
+            }
+        ],
+        "action_generation": "My previous action was incorrect as it didn't conform to the action templates provided. However, the sink is now deactivated and the filled glass cup is still in the sink. I will correct my action to pick up the glass cup.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+    },
+    {
+        "reward": 0.0,
+        "last_action": "pick up glass cup",
+        "state_description": "You move the glass cup to the inventory.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta glass jar (containing a substance called sodium chloride)\n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing a substance called water)\n\tan orange\n",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called sugar water)\":\n\t1. mix glass cup\n\t2. focus on sugar water\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #8:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "My previous action was incorrect as it didn't conform to the action templates provided. However, the sink is now deactivated and the filled glass cup is still in the sink. I will correct my action to pick up the glass cup.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #9:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing a substance called water) in your inventory\n\ta sink, which is turned off. in the sink is: nothing"
+            }
+        ],
+        "action_generation": "The last action had the effect of moving the glass cup, which now contains water, from the sink to my inventory. To create the salt water, the next step is to mix this water with the sodium chloride. But first, I need to acquire the sodium chloride from the glass jar.\n\nCurrent subgoal: \"none\"\nNext action:  pick up glass jar"
+    },
+    {
+        "reward": 0.0,
+        "last_action": "pick up glass jar",
+        "state_description": "You move the glass jar to the inventory.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing a substance called water)\n\ta glass jar (containing a substance called sodium chloride)\n\tan orange\n",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called sugar water)\":\n\t1. mix glass cup\n\t2. focus on sugar water\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the hallway.\nYou also observe:\n\ta door to the living room (that is open)\n\ta door to the art studio (that is open)\n\ta door to the greenhouse (that is open)\n\ta door to the workshop (that is open)\n\ta door to the bedroom (that is open)\n\ta door to the kitchen (that is open)\n\tthis room is called the hallway.\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta picture"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of providing a description of the scene, revealing the various rooms accessible from the hallway and the objects present, including an orange in my inventory. To accomplish the task, I will need to find a recipe for creating salt water and gather the necessary ingredients. According to the instructions, the kitchen may contain a recipe and some of the ingredients necessary for creating salt water.\n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  go kitchen"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta painting\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #8:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "My previous action was incorrect as it didn't conform to the action templates provided. However, the sink is now deactivated and the filled glass cup is still in the sink. I will correct my action to pick up the glass cup.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #9:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing a substance called water) in your inventory\n\ta sink, which is turned off. in the sink is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup, which now contains water, from the sink to my inventory. To create the salt water, the next step is to mix this water with the sodium chloride. But first, I need to acquire the sodium chloride from the glass jar.\n\nCurrent subgoal: \"none\"\nNext action:  pick up glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #10:\nYou move the glass jar to the inventory.\nYou also observe:\n\ta glass jar (containing a substance called sodium chloride) in your inventory"
+            }
+        ],
+        "action_generation": "The last action had the effect of moving the glass jar, which contains sodium chloride (salt), to my inventory. I now have both water and silverware needed to make salt water. The next step is to mix sodium chloride with the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+    },
+    {
+        "reward": 0.0,
+        "last_action": "pour glass jar in glass cup",
+        "state_description": "The glass jar can't be poured out, because it's not open.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing a substance called water)\n\ta glass jar (containing a substance called sodium chloride)\n\tan orange\n",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"the agent has read a recipe in the kitchen.\":\n\t1. go kitchen\n\t2. read instructions to make obj\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory.\n\nInstructions for reaching the subgoal \"the drawer is now open.\":\n\t1. look in drawer\n\t2. open drawer"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nYou move to the kitchen.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta substance called air\n\ta painting\n\tthe agent\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving me to the kitchen. Upon arriving, I observed several items including a recipe titled 'instructions to make salt water', a glass jar containing sodium chloride (salt), a glass cup, and a sink. To accomplish the task, I will first need to read the recipe to know how to create salt water. \n\nCurrent subgoal: \"the agent has read a recipe in the kitchen.\"\nNext action:  read instructions to make salt water"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "My previous action was incorrect as it didn't conform to the action templates provided. However, the sink is now deactivated and the filled glass cup is still in the sink. I will correct my action to pick up the glass cup.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #8:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing a substance called water) in your inventory\n\ta sink, which is turned off. in the sink is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup, which now contains water, from the sink to my inventory. To create the salt water, the next step is to mix this water with the sodium chloride. But first, I need to acquire the sodium chloride from the glass jar.\n\nCurrent subgoal: \"none\"\nNext action:  pick up glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #9:\nYou move the glass jar to the inventory.\nYou also observe:\n\ta glass jar (containing a substance called sodium chloride) in your inventory"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass jar, which contains sodium chloride (salt), to my inventory. I now have both water and silverware needed to make salt water. The next step is to mix sodium chloride with the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #10:\nThe glass jar can't be poured out, because it's not open."
+            }
+        ],
+        "action_generation": "The last action was unsuccessful because the glass jar, which contains the sodium chloride, is currently not open. Therefore, in order to pour the sodium chloride into the cup, I need to first open the jar.\n\nCurrent subgoal: \"none\"\nNext action:  open glass jar"
+    },
+    {
+        "reward": 0.0,
+        "last_action": "open glass jar",
+        "state_description": "The glass jar is now open.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing a substance called water)\n\ta glass jar (containing a substance called sodium chloride)\n\tan orange\n",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"the drawer is now open.\":\n\t1. look in drawer\n\t2. open drawer\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory."
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThe recipe reads:\nTo make salt water, you need to mix sodium chloride, water.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta table. on the table is: a glass cup (containing nothing)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta substance called air\n\ta painting\n\tthe agent\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of informing me that to make salt water, I need to mix sodium chloride and water. To accomplish the task, I will need both these ingredients. I've already observed a glass jar containing sodium chloride in the kitchen. Now, I need to find water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing nothing) in your inventory\n\ta table. on the table is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "My previous action was incorrect as it didn't conform to the action templates provided. However, the sink is now deactivated and the filled glass cup is still in the sink. I will correct my action to pick up the glass cup.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing a substance called water) in your inventory\n\ta sink, which is turned off. in the sink is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup, which now contains water, from the sink to my inventory. To create the salt water, the next step is to mix this water with the sodium chloride. But first, I need to acquire the sodium chloride from the glass jar.\n\nCurrent subgoal: \"none\"\nNext action:  pick up glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #8:\nYou move the glass jar to the inventory.\nYou also observe:\n\ta glass jar (containing a substance called sodium chloride) in your inventory"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass jar, which contains sodium chloride (salt), to my inventory. I now have both water and silverware needed to make salt water. The next step is to mix sodium chloride with the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #9:\nThe glass jar can't be poured out, because it's not open."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action was unsuccessful because the glass jar, which contains the sodium chloride, is currently not open. Therefore, in order to pour the sodium chloride into the cup, I need to first open the jar.\n\nCurrent subgoal: \"none\"\nNext action:  open glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #10:\nThe glass jar is now open."
+            }
+        ],
+        "action_generation": "The last action had the effect of opening the glass jar that contains the sodium chloride (salt). Now I can pour the salt into the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+    },
+    {
+        "reward": 0.09,
+        "last_action": "pour glass jar in glass cup",
+        "state_description": "You pour the contents of the glass jar into the glass cup.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing a substance called sodium chloride, a substance called water)\n\ta glass jar (containing nothing)\n\tan orange\n",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard\n\nInstructions for reaching the subgoal \"in your inventory, you see: a glass cup (containing a substance called water)\":\n\t1. activate the sink.\n\t2. deactivate the sink.\n\t3. pick up the glass cup from the sink and move it to the inventory.\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called sugar water)\":\n\t1. mix glass cup\n\t2. focus on sugar water"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta sink, which is turned off. in the sink is: nothing\n\ta glass cup (containing nothing) in your inventory\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\ta table. on the table is: nothing\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta substance called air\n\ta painting\n\tthe agent\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup from the table to my inventory. Now that I have a glass cup in my inventory, my next step is to fill it with water using the sink in the kitchen. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  move glass cup to sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move the glass cup to the sink.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "My previous action was incorrect as it didn't conform to the action templates provided. However, the sink is now deactivated and the filled glass cup is still in the sink. I will correct my action to pick up the glass cup.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing a substance called water) in your inventory\n\ta sink, which is turned off. in the sink is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup, which now contains water, from the sink to my inventory. To create the salt water, the next step is to mix this water with the sodium chloride. But first, I need to acquire the sodium chloride from the glass jar.\n\nCurrent subgoal: \"none\"\nNext action:  pick up glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nYou move the glass jar to the inventory.\nYou also observe:\n\ta glass jar (containing a substance called sodium chloride) in your inventory"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass jar, which contains sodium chloride (salt), to my inventory. I now have both water and silverware needed to make salt water. The next step is to mix sodium chloride with the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #8:\nThe glass jar can't be poured out, because it's not open."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action was unsuccessful because the glass jar, which contains the sodium chloride, is currently not open. Therefore, in order to pour the sodium chloride into the cup, I need to first open the jar.\n\nCurrent subgoal: \"none\"\nNext action:  open glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #9:\nThe glass jar is now open."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of opening the glass jar that contains the sodium chloride (salt). Now I can pour the salt into the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #10:\nYou pour the contents of the glass jar into the glass cup.\nYou also observe:\n\ta glass cup (containing a substance called sodium chloride, a substance called water) in your inventory\n\ta glass jar (containing nothing) in your inventory"
+            }
+        ],
+        "action_generation": "The last action had the effect of pouring the sodium chloride (salt) from the glass jar into the glass cup, which already contains water. The resulting mixture in the glass cup is now a combination of salt and water, but these two substances have yet to be combined into a single solution. To accomplish this, I need to mix the contents of the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  mix glass cup"
+    },
+    {
+        "reward": 0.08,
+        "last_action": "mix glass cup",
+        "state_description": "Sodium chloride and water mix to produce salt water.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing a substance called salt water)\n\ta glass jar (containing nothing)\n\tan orange\n",
+        "chosen_skill": "you focus on the product of the mixture.",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task. You will occasionally be given posisible subgoals. You may choose to target one of these subgoals or ignore them.\n\nTask Description:\nYour task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task, output which of the given subgoals you are targeting next (match one of the subgoals in the prompt word for word or output \"none\"), and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait\n\nThe following instructions contain potentially useful information about reaching subgoals:\n\nInstructions for reaching the subgoal \"a glass cup (containing a substance called water) is in the inventory.\":\n\t1. pick up the glass cup.\n\t2. move the glass cup to the sink.\n\t3. deactivate the sink.\n\t4. pick up the glass cup from the sink.\n\nInstructions for reaching the subgoal \"you move the substance to the container.\":\n\t1. pick up container obj1.\n\t2. move substance obj2 to container obj1.\n\nInstructions for reaching the subgoal \"you focus on the product of the mixture.\":\n\t1. move obj to container\n\t2. mix container\n\t3. focus on resulting product\n\nInstructions for reaching the subgoal \"the cupboard is now open.\":\n\t1. open drawer\n\t2. look in drawer\n\t3. open cupboard"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nYou move the glass cup to the sink.\nYou also observe:\n\ta counter. on the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer\n\ta sink, which is turned off. in the sink is: a glass cup (containing nothing)\n\ta thermometer, currently reading a temperature of 10 degrees celsius\n\ta glass jar (containing a substance called sodium chloride)\n\ta stove, which is turned off. on the stove is: nothing\n\ta oven, which is turned off. the oven door is closed\n\ta recipe titled instructions to make salt water\n\ta cupboard. the cupboard door is closed\n\ta freezer. the freezer door is closed\n\ta door to the bathroom (that is open)\n\ta door to the hallway (that is open)\n\ta door to the outside (that is open)\n\ta fridge. the fridge door is closed\n\ta chair. on the chair is: nothing\n\ta stopwatch, which is deactivated\n\ta table. on the table is: nothing\n\tthis room is called the kitchen.\n\ta substance called soap\n\ta substance called air\n\ta painting\n\tthe agent\n\ta lighter"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup to the sink. Now, I need to fill the glass cup with water. \n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  activate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nThe sink is now activated.\nYou also observe:\n\ta sink, which is turned on. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of activating the sink and filling the glass cup with water. Now, I need to turn off the sink and then pick up the glass cup filled with water.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  deactivate sink"
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nThe sink is now deactivated.\nYou also observe:\n\ta sink, which is turned off. in the sink is: a glass cup (containing a substance called water)"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of deactivating the sink. Now, the glass cup filled with water is in the sink. My next step is to pick up the glass cup and move it back to my inventory.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup from the sink and move it to the inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "My previous action was incorrect as it didn't conform to the action templates provided. However, the sink is now deactivated and the filled glass cup is still in the sink. I will correct my action to pick up the glass cup.\n\nCurrent subgoal: \"a glass cup (containing a substance called water) is in the inventory.\"\nNext action:  pick up glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nYou move the glass cup to the inventory.\nYou also observe:\n\ta glass cup (containing a substance called water) in your inventory\n\ta sink, which is turned off. in the sink is: nothing"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass cup, which now contains water, from the sink to my inventory. To create the salt water, the next step is to mix this water with the sodium chloride. But first, I need to acquire the sodium chloride from the glass jar.\n\nCurrent subgoal: \"none\"\nNext action:  pick up glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #6:\nYou move the glass jar to the inventory.\nYou also observe:\n\ta glass jar (containing a substance called sodium chloride) in your inventory"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of moving the glass jar, which contains sodium chloride (salt), to my inventory. I now have both water and silverware needed to make salt water. The next step is to mix sodium chloride with the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #7:\nThe glass jar can't be poured out, because it's not open."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action was unsuccessful because the glass jar, which contains the sodium chloride, is currently not open. Therefore, in order to pour the sodium chloride into the cup, I need to first open the jar.\n\nCurrent subgoal: \"none\"\nNext action:  open glass jar"
+            },
+            {
+                "role": "user",
+                "content": "Step #8:\nThe glass jar is now open."
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of opening the glass jar that contains the sodium chloride (salt). Now I can pour the salt into the water in the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  pour glass jar in glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #9:\nYou pour the contents of the glass jar into the glass cup.\nYou also observe:\n\ta glass cup (containing a substance called sodium chloride, a substance called water) in your inventory\n\ta glass jar (containing nothing) in your inventory"
+            },
+            {
+                "role": "assistant",
+                "content": "The last action had the effect of pouring the sodium chloride (salt) from the glass jar into the glass cup, which already contains water. The resulting mixture in the glass cup is now a combination of salt and water, but these two substances have yet to be combined into a single solution. To accomplish this, I need to mix the contents of the glass cup.\n\nCurrent subgoal: \"none\"\nNext action:  mix glass cup"
+            },
+            {
+                "role": "user",
+                "content": "Step #10:\nSodium chloride and water mix to produce salt water.\nYou also observe:\n\ta glass cup (containing a substance called salt water) in your inventory"
+            }
+        ],
+        "action_generation": "The last action had the effect of mixing the sodium chloride (salt) with the water in the glass cup, producing salt water. I have successfully completed the task of creating salt water. Now, I need to focus on the salt water as per the task description.\n\nCurrent subgoal: \"you focus on the product of the mixture.\"\nNext action:  focus on salt water"
+    },
+    {
+        "reward": 0.5,
+        "last_action": "focus on salt water",
+        "state_description": "You focus on the salt water.\nThis room is called the kitchen. In it, you see: \n\tthe agent\n\ta substance called air\n\ta chair. On the chair is: nothing.\n\ta counter. On the counter is: a bowl (containing a red apple, a banana, an orange, a potato), a drawer.\n\ta cupboard. The cupboard door is closed. \n\ta freezer. The freezer door is closed. \n\ta fridge. The fridge door is closed. \n\ta lighter\n\ta oven, which is turned off. The oven door is closed. \n\ta painting\n\tA recipe titled instructions to make salt water\n\ta sink, which is turned off. In the sink is: nothing.\n\ta substance called soap\n\ta stopwatch, which is deactivated. \n\ta stove, which is turned off. On the stove is: nothing.\n\ta table. On the table is: nothing.\n\ta thermometer, currently reading a temperature of 10 degrees celsius\nYou also see:\n\tA door to the bathroom (that is open)\n\tA door to the hallway (that is open)\n\tA door to the outside (that is open)\n\nIn your inventory, you see:\n\ta glass cup (containing a substance called salt water)\n\ta glass jar (containing nothing)\n\tan orange\n",
+        "trajectory_success": true,
+        "score": 1.0,
+        "length": 15
+    }
+]

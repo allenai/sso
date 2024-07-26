@@ -1,0 +1,89 @@
+{
+    "task_description": "Task Description:\nYour task is to use chemistry to create the substance 'peanut butter with banana sandwich'. A recipe and some of the ingredients might be found near the workshop. When you are done, focus on the peanut butter with banana sandwich.",
+    "steps": [
+        {
+            "observation": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing nothing)\n\tthe ground\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)",
+            "state_description": "This outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing nothing)\n\tthe ground\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\nIn your inventory, you see:\n\tan orange\n",
+            "state_features": [
+                "this outside location is called the outside. here you see:",
+                "the agent",
+                "a substance called air",
+                "an axe",
+                "a fire pit (containing nothing)",
+                "a fountain (containing nothing)",
+                "the ground",
+                "a substance called wood",
+                "a door to the foundry (that is open)",
+                "a door to the greenhouse (that is open)",
+                "a door to the kitchen (that is open)",
+                "an orange in your inventory"
+            ],
+            "last_generation": null,
+            "last_action": null,
+            "reward": 0,
+            "done": false,
+            "action_prompt": "Generate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait",
+            "all_templates": [
+                "read OBJ",
+                "activate OBJ",
+                "deactivate OBJ",
+                "open OBJ",
+                "close OBJ",
+                "pick up OBJ",
+                "look in OBJ",
+                "focus on OBJ",
+                "move OBJ to CONTAINER",
+                "pour OBJ in CONTAINER",
+                "mix CONTAINER",
+                "teleport LOCATION",
+                "go LOCATION",
+                "wait"
+            ],
+            "task_description": "Task Description:\nYour task is to use chemistry to create the substance 'peanut butter with banana sandwich'. A recipe and some of the ingredients might be found near the workshop. When you are done, focus on the peanut butter with banana sandwich.",
+            "skill_target": null
+        },
+        {
+            "observation": "You focus on the axe.",
+            "state_description": "You focus on the axe.\nThis outside location is called the outside. Here you see: \n\tthe agent\n\ta substance called air\n\tan axe\n\ta fire pit (containing nothing)\n\ta fountain (containing a substance called water)\n\tthe ground\n\ta substance called wood\nYou also see:\n\tA door to the foundry (that is open)\n\tA door to the greenhouse (that is open)\n\tA door to the kitchen (that is open)\n\nIn your inventory, you see:\n\tan orange\n",
+            "state_features": [
+                "You focus on the axe.",
+                "this outside location is called the outside. here you see:",
+                "the agent",
+                "a substance called air",
+                "an axe",
+                "a fire pit (containing nothing)",
+                "a fountain (containing a substance called water)",
+                "a substance called water",
+                "the ground",
+                "a substance called wood",
+                "a door to the foundry (that is open)",
+                "a door to the greenhouse (that is open)",
+                "a door to the kitchen (that is open)",
+                "an orange in your inventory"
+            ],
+            "last_generation": "focus on axe in outside ",
+            "last_action": "focus on axe in outside",
+            "reward": -1.0,
+            "done": true,
+            "action_prompt": "Generate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait",
+            "all_templates": [
+                "read OBJ",
+                "activate OBJ",
+                "deactivate OBJ",
+                "open OBJ",
+                "close OBJ",
+                "pick up OBJ",
+                "look in OBJ",
+                "focus on OBJ",
+                "move OBJ to CONTAINER",
+                "pour OBJ in CONTAINER",
+                "mix CONTAINER",
+                "teleport LOCATION",
+                "go LOCATION",
+                "wait"
+            ],
+            "task_description": "Task Description:\nYour task is to use chemistry to create the substance 'peanut butter with banana sandwich'. A recipe and some of the ingredients might be found near the workshop. When you are done, focus on the peanut butter with banana sandwich.",
+            "skill_target": null
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 from sso.trajectory import Trajectory
 from sso.llm import query_llm
 from sso.agent import Agent
-
+import json
 
 class FewshotAgent(Agent):
 
@@ -9,26 +9,29 @@ class FewshotAgent(Agent):
         super().__init__(**kwargs)
         self.fewshot = fewshot
 
-    def act(self, trajectory: Trajectory) -> str:
+    def act(self, trajectory: Trajectory, valid_action) -> str:
         super().act(trajectory)
 
         # Get next action
-        return self._act(trajectory)
+        return self._act(trajectory, valid_action)
 
     def _update_memory(self, trajectory: Trajectory) -> None:
         self.memory.insert(trajectory)
 
-    def _act(self, trajectory: Trajectory) -> str:
+    def _act(self, trajectory: Trajectory, valid_action) -> str:
+
+
         sub_trajectory = trajectory.slice(-self.max_history, None)
 
         system_message = "You are playing a text-based game in which you must interact with your surroundings to complete a task.\n\n"
         system_message += sub_trajectory.task_description
         system_message += "\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task and then output the next action to execute (use one of the action templates below)."
         system_message += "\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]"
+        
         if sub_trajectory[-1].action_prompt is not None:
             system_message += "\n\n" + sub_trajectory[-1].action_prompt
-
-        if len(self.memory.trajectories) > 0:
+        
+        if len(self.memory.trajectories) > 0: 
             examples = self.memory.get_memories(sub_trajectory, n=self.fewshot)
             system_message += "\n\nUse the following example trajector{} to help you accomplish the task:".format(
                 "ies" if len(examples) > 1 else "y"
@@ -52,9 +55,26 @@ class FewshotAgent(Agent):
                 messages.append(dict(role="assistant", content=action_text))
 
             prompt = state_strings[i]
+            
             messages.append(dict(role="user", content=prompt))
 
-        response = query_llm(messages)
+        response = query_llm(messages, valid_action)
         self.log("action_messages", messages)
         self.log("action_generation", response)
         return response
+
+    # def _act(self, trajectory: Trajectory, valid_action) -> str:
+    #     print("start acting")
+    #     messages = ""
+
+    #     # use the whole trajectory instead of the sub_trajectory
+    #     for i in range(len(trajectory)):
+    #         state = trajectory[i]
+    #         if i != 0:
+    #             messages += "Your observation:" + state.last_action
+    #         messages += "You take action:" + state.observation
+            
+    #     response = query_llm(messages, valid_action)
+    #     self.log("action_generation", response)
+    #     return response
+        

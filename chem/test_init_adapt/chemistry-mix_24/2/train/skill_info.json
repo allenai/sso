@@ -1,0 +1,73 @@
+[
+    {
+        "instructions": [
+            "open cupboard",
+            "look in obj",
+            "move obj to sink"
+        ],
+        "target": "the sink is now activated. in the sink is: an item (containing nothing).",
+        "prereqs": [],
+        "state_similarity": 0.9747374688435594,
+        "action_similarity": 0.888450904657418,
+        "rewards": [
+            0.0,
+            0.0
+        ],
+        "initial": [
+            [
+                "a cupboard. the cupboard door is closed",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ],
+            [
+                "a cupboard. the cupboard door is closed",
+                "a freezer. the freezer door is open. in the freezer is: nothing",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a door to the bathroom (that is open)",
+                "a door to the hallway (that is open)",
+                "a door to the outside (that is open)"
+            ]
+        ],
+        "actions": [
+            [
+                "open cupboard",
+                "look in metal pot",
+                "move metal pot to sink"
+            ],
+            [
+                "open cupboard",
+                "activate sink",
+                "move glass cup to sink"
+            ]
+        ],
+        "final": [
+            [
+                "a sink, which is turned off. in the sink is: a metal pot (containing nothing)",
+                "a metal pot (containing nothing)"
+            ],
+            [
+                "a cupboard. the cupboard door is open. in the cupboard is: a ceramic cup (containing nothing), a drawer, a metal pot (containing nothing), a tin cup (containing nothing)",
+                "a ceramic cup (containing nothing)",
+                "a tin cup (containing nothing)",
+                "a fridge. the fridge door is open. in the fridge is: a wood cup (containing orange juice)",
+                "a wood cup (containing orange juice)",
+                "a glass jar (containing a substance called sodium chloride)",
+                "a sink, which is turned on. in the sink is: a glass cup (containing a substance called water)",
+                "a glass cup (containing a substance called water)"
+            ]
+        ],
+        "traj_indices": [
+            1,
+            0
+        ],
+        "start_indices": [
+            0,
+            11
+        ],
+        "end_indices": [
+            4,
+            15
+        ]
+    }
+]

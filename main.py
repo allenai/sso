@@ -26,9 +26,11 @@ def run_episode(
     task_id: str = None,
     test: bool = False,
 ) -> Tuple[str, Trajectory, bool, float]:
-
+    
     done = False
-    state, info = env.reset(task_id=task_id, test=test)
+    
+    state, info, valid_action = env.reset(task_id=task_id, test=test)
+
     trajectory = Trajectory(task_description=info["task_description"])
     trajectory.insert(state)
 
@@ -36,11 +38,13 @@ def run_episode(
     agent.log("task_id", info["task_id"])
     agent.log("task_description", info["task_description"])
 
-    pbar = tqdm(total=env.max_steps)
+    pbar = tqdm(total = env.max_steps)
     score = 0
+
     while not done:
-        action = agent.act(trajectory)
+        action = agent.act(trajectory, valid_action)
         state, reward, done, info = env.step(action)
+
         if reward > 0:
             score += reward
         trajectory.insert(state)
@@ -86,6 +90,7 @@ def run_experiment(
     agent.train(train)
     set_default_model(temp=temp)
     task_id, trajectory, success, score = run_episode(env, agent, test=use_test_tasks)
+    
     save_path = os.path.join(results_dir, experiment_name, str(iteration))
     log_results(agent, trajectory, save_path, iteration, task_id, success, score)
     return score, success
@@ -163,12 +168,16 @@ def run(
             json.dump(results, f, indent=4)
 
 
+
+
+
+
 if __name__ == '__main__':
 
     parser = ArgumentParser()
 
     # Experiment params
-    parser.add_argument("--output", type=str, default="results_chem_test", help="output directory")
+    parser.add_argument("--output", type=str, default="results_chem_observation_action", help="output directory")
     parser.add_argument("--train_iters", type=int, default=3, help="number of iterations to run")
     parser.add_argument("--test_iters", type=int, default=1, help="number of test iterations to run")
     parser.add_argument("--test_freq", type=int, default=0, help="test frequency, if 0 will test once at end")
@@ -252,6 +261,7 @@ if __name__ == '__main__':
         train_variants=args.train_variants,
         test_variants=args.test_variants
     )
+
     if args.env == "scienceworld":
         env = ScienceWorld(**env_args)
     elif args.env == "nethack":

@@ -1,0 +1,174 @@
+[
+    {
+        "task_id": "chemistry-mix_24",
+        "task_description": "Task Description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water."
+    },
+    {
+        "reward": 0,
+        "last_action": null,
+        "state_description": "This room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta drawing\n\ta glass cup (containing nothing)\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is open, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\nIn your inventory, you see:\n\tan orange\n",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task.\n\nTask Description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is open, a substance called water\n\ta bathtub, which is turned off. in the bathtub is: nothing\n\ta sink, which is turned off. in the sink is: nothing\n\ta door to the kitchen (that is open)\n\tthis room is called the bathroom.\n\ta glass cup (containing nothing)\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta drawing"
+            }
+        ],
+        "action_generation": "drop orange on inventory "
+    },
+    {
+        "reward": 0.0,
+        "last_action": "drop orange in inventory",
+        "state_description": "You move the orange to the bathroom.\nThis room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta drawing\n\ta glass cup (containing nothing)\n\tan orange\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is closed, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n\nIn your inventory, you see:\n\tnothing",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task.\n\nTask Description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is open, a substance called water\n\ta bathtub, which is turned off. in the bathtub is: nothing\n\ta sink, which is turned off. in the sink is: nothing\n\ta door to the kitchen (that is open)\n\tthis room is called the bathroom.\n\ta glass cup (containing nothing)\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta drawing"
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to drop orange in inventory. Next action: drop orange in inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move the orange to the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is closed, a substance called water\n\tan orange"
+            }
+        ],
+        "action_generation": "drop orange in inventory "
+    },
+    {
+        "reward": 0.0,
+        "last_action": "drop orange in inventory ",
+        "state_description": "No known action matches that input.\nThis room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta drawing\n\ta glass cup (containing nothing)\n\tan orange\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is closed, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n\nIn your inventory, you see:\n\tnothing",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task.\n\nTask Description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is open, a substance called water\n\ta bathtub, which is turned off. in the bathtub is: nothing\n\ta sink, which is turned off. in the sink is: nothing\n\ta door to the kitchen (that is open)\n\tthis room is called the bathroom.\n\ta glass cup (containing nothing)\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta drawing"
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to drop orange in inventory. Next action: drop orange in inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move the orange to the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is closed, a substance called water\n\tan orange"
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to drop orange in inventory . Next action: drop orange in inventory "
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nNo known action matches that input."
+            }
+        ],
+        "action_generation": "task "
+    },
+    {
+        "reward": 0.0,
+        "last_action": "task",
+        "state_description": "Task description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\nThis room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta drawing\n\ta glass cup (containing nothing)\n\tan orange\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is closed, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n\nIn your inventory, you see:\n\tnothing",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task.\n\nTask Description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is open, a substance called water\n\ta bathtub, which is turned off. in the bathtub is: nothing\n\ta sink, which is turned off. in the sink is: nothing\n\ta door to the kitchen (that is open)\n\tthis room is called the bathroom.\n\ta glass cup (containing nothing)\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta drawing"
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to drop orange in inventory. Next action: drop orange in inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move the orange to the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is closed, a substance called water\n\tan orange"
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to drop orange in inventory . Next action: drop orange in inventory "
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to task. Next action: task"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nTask description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\nYou also observe:\n\tTask description:, Your task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water."
+            }
+        ],
+        "action_generation": "task "
+    },
+    {
+        "reward": 0.0,
+        "last_action": "task",
+        "state_description": "Task description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\nThis room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta drawing\n\ta glass cup (containing nothing)\n\tan orange\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is closed, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n\nIn your inventory, you see:\n\tnothing",
+        "action_messages": [
+            {
+                "role": "system",
+                "content": "You are playing a text-based game in which you must interact with your surroundings to complete a task.\n\nTask Description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\n\nGiven the state, reflect on what has happened so far, explain your plan to accomplish the task and then output the next action to execute (use one of the action templates below).\n\nFor example:\nThe last action had the effect of... To accomplish the task, I will need to...\nCurrent subgoal: [subgoal]\nNext action: [action]\n\nGenerate the action using one of the following templates, where OBJ is an object in the scene and LOCATION is an adjacent room and CONTAINER is an object that can contain or hold other objects such as a pot, table, or inventory. The \"focus on OBJ\" action is extremely critical and should not be used to look at or shift your attention to a specific object. It should only be used as described in the task description. Using this action inappropriately will result in task failure. The \"wait\" action is used to wait for time to pass during tasks that require the passage of time.\nTemplates:\n\tread OBJ\n\tactivate OBJ\n\tdeactivate OBJ\n\topen OBJ\n\tclose OBJ\n\tpick up OBJ\n\tlook in OBJ\n\tfocus on OBJ\n\tmove OBJ to CONTAINER\n\tpour OBJ in CONTAINER\n\tmix CONTAINER\n\tteleport LOCATION\n\tgo LOCATION\n\twait"
+            },
+            {
+                "role": "user",
+                "content": "Step #1:\nThis room is called the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is open, a substance called water\n\ta bathtub, which is turned off. in the bathtub is: nothing\n\ta sink, which is turned off. in the sink is: nothing\n\ta door to the kitchen (that is open)\n\tthis room is called the bathroom.\n\ta glass cup (containing nothing)\n\tan orange in your inventory\n\ta substance called air\n\tthe agent\n\ta drawing"
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to drop orange in inventory. Next action: drop orange in inventory"
+            },
+            {
+                "role": "user",
+                "content": "Step #2:\nYou move the orange to the bathroom.\nYou also observe:\n\ta toilet. in the toilet is: a drain, which is closed, a substance called water\n\tan orange"
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to drop orange in inventory . Next action: drop orange in inventory "
+            },
+            {
+                "role": "user",
+                "content": "Step #3:\nNo known action matches that input."
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to task. Next action: task"
+            },
+            {
+                "role": "user",
+                "content": "Step #4:\nTask description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water.\nYou also observe:\n\tTask description:, Your task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water."
+            },
+            {
+                "role": "assistant",
+                "content": "To accomplish the task, I will need to task. Next action: task"
+            },
+            {
+                "role": "user",
+                "content": "Step #5:\nTask description:\nYour task is to use chemistry to create the substance 'sugar water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the sugar water."
+            }
+        ],
+        "action_generation": "focus on inventory in agent "
+    },
+    {
+        "reward": -1.08,
+        "last_action": "focus on inventory in agent",
+        "state_description": "You focus on the inventory.\nThis room is called the bathroom. In it, you see: \n\tthe agent\n\ta substance called air\n\ta bathtub, which is turned off. In the bathtub is: nothing.\n\ta drawing\n\ta glass cup (containing nothing)\n\tan orange\n\ta sink, which is turned off. In the sink is: nothing.\n\ta toilet. In the toilet is: A drain, which is closed, a substance called water.\nYou also see:\n\tA door to the kitchen (that is open)\n\nIn your inventory, you see:\n\tnothing",
+        "trajectory_success": false,
+        "score": 0,
+        "length": 6
+    }
+]
